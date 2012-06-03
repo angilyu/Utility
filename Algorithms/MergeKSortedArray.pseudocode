@@ -1,0 +1,21 @@
+PriorityQueue queue(k, min);  //Each element in the queue is a pair: (number, source), number is the number in the array, source means which array it comes from. The priority queue is sorted according to the number.
+int* p[k];  //k pointers, point to the currect non-merged number in each array.
+int result[];
+for (i = 0; i < k; i++) {
+    p[i] = pArray[i];  //I don't know how to represent the k'th array. pArray[i] means the pointer point to the first element of k'th array.
+    queue.Insert(*p[i]);
+}
+int next;
+int* pResult = result;
+while (queue.Pick() != null) {
+    next = queue.Pick();
+    *pResult++ = next.number;
+    queue.Remove();
+    if (p[next.source] is not exceed the last element of the array)) {
+        queue.Insert(*p[next.source]);
+        p[next.source]++;
+    }
+}
+
+
+

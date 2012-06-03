@@ -1,0 +1,15 @@
+PriorityQueue queue(100, min);
+int count = 0;
+int number, min
+while (input.hasNext()) {
+    number = input.read();
+    if (count < 100) {
+        queue.Insert(number);
+        count++;
+    }
+    min = queue.Pick();
+    if (number > min) {
+        queue.Remove();
+        queeu.Insert(number);
+    }
+}
