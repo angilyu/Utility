@@ -3,18 +3,18 @@
 #include <list>
 #include <algorithm>
 #include <string>
-typedef bool Criteria(int number, int poivt);
+typedef bool Criteria(int number, int pivot);
 
 template <class Type>
-Type* partition(Type* array, int size, Criteria criteria, int poivt) {
+Type* partition(Type* array, int size, Criteria criteria, int pivot) {
     Type* pHead = array;
     Type* pTail = array + size - 1;
     while (pHead != pTail) {
-        if (criteria(*pHead, poivt)) {
+        if (criteria(*pHead, pivot)) {
             pHead++;
             continue;
         }
-        if (!criteria(*pTail, poivt)) {
+        if (!criteria(*pTail, pivot)) {
             pTail--;
             continue;
         }
@@ -26,7 +26,7 @@ Type* partition(Type* array, int size, Criteria criteria, int poivt) {
             pTail--;
         }
     }
-    if (!criteria(*pHead, poivt))
+    if (!criteria(*pHead, pivot))
         return pHead;
     else
         return pHead + 1;

@@ -4,27 +4,27 @@
 #include "FindKth.h"
 
 using namespace std;
-bool lessThan(int number, int poivt) {
-    if (number < poivt)
+bool lessThan(int number, int pivot) {
+    if (number < pivot)
         return true;
     else 
         return false;
 }
 int FindKthNumber(int* array, int size, int k) {
-    int poivt =  array[0];
+    int pivot =  array[0];
     if (size == 1) {
-        return poivt;
+        return pivot;
     }
-    cout<<"poivt: "<<poivt<<"\t";
+    cout<<"pivot: "<<pivot<<"\t";
     int kth;
-    int* middle = partition(array + 1, size - 1, lessThan, poivt);
+    int* middle = partition(array + 1, size - 1, lessThan, pivot);
     cout<<middle - array<<endl;
     swap(*(middle - 1), array[0]);
     if (middle - array > k) {
         //find before middle
         kth = FindKthNumber(array, middle - array - 1, k);
     } else if (middle - array == k) {
-        kth =  poivt;
+        kth =  pivot;
     } else {
         //find >= middle
         kth = FindKthNumber(middle, size - (middle - array), k - (middle - array) );
