@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-double sqrt(double current, double lowBound, double upBound, int number) {
+
+double sqrt(double current, double lowBound, double upBound, double number) {
     if (current * current - number <= 0.01 && current * current - number >= -0.01) 
     {
         return current;
