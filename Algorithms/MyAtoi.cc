@@ -1,5 +1,21 @@
 #include <iostream>
 using namespace std;
+
+int toInt(const char* str) {
+    // process sign
+    bool negative = *str == '-';
+    if (*str == '+' || *str == '-')
+        ++str;
+
+    int sum = 0;
+    while (*str != '\0') {
+        assert(isDigit(*str));
+        sum = sum * 10 + (*str - '0');
+        ++str;
+    }
+    return negative ? -sum : sum;
+}
+
 int MyAtoi(const char* s) {
     const char* pos = s;
     int result = 0;
