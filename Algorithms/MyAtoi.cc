@@ -21,6 +21,8 @@ int MyAtoi(const char* s) {
     int result = 0;
     bool negative = false;
     while (*pos != '\0') {
+        // FIXME you may consider to move the following 'if' statement
+        // out of the while loop.
         if (s == pos && *pos == '-') {
             negative = true;
             pos++;
@@ -33,6 +35,7 @@ int MyAtoi(const char* s) {
         }
         pos++;
     }
+    // FIXME: this is not a very good style
     if (negative) {
         result =  0 - result;
     }
