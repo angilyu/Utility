@@ -3,6 +3,9 @@ using namespace std;
 
 // FIXME: since Merge() could be a standalone utility, try to make this 
 // interface more user-friendly
+// Suggested interface:
+//  void Merge(int* input1, size_t size1, int* input2, size_t size2, int* output);
+//
 void Merge(int* array, int* temp, int left, int right, int middle) {
     int* pLeft = array + left;
     int* pRight = array + middle;
