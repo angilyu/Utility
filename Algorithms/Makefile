@@ -1,4 +1,12 @@
-.PHONY: run clean
+.PHONY: run clean all
+
+ALGORITHM_OBJECTS=Sqrt.o
+
+Algorithm.a: $(ALGORITHM_OBJECTS)
+	ar -cvq Algorithm.a $<
+
+%.o: %.cc
+	g++ -c -o $@ $<
 
 FindRemovedNumber.e: FindRemovedNumber.cc
 	g++ -o FindRemovedNumber.e FindRemovedNumber.cc
@@ -32,7 +40,7 @@ MergeTwoArray.e: MergeTwoSortedArray.cc
 	g++ -o MergeTwoSortedArray.e MergeTwoSortedArray.cc
 
 clean: 
-	rm *.e
+	rm -rf *.e rm *.o *.a
 run:
 	make FindRemovedNumber
 	./FindRemovedNumber.e

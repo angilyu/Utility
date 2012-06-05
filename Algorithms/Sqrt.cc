@@ -29,11 +29,3 @@ double sqrt(double number) {
 } // end wenjing namespace
 } // end util namespace
 
-
-#include <iostream>
-using namespace std;
-
-int main(int argc, char** argv) {
-    cout<<wenjing::util::sqrt(0.25)<<endl;
-}
-

@@ -12,8 +12,7 @@ namespace util{
 ///
 /// @return returns the best guess of square root
 //          if the input is invalid, return -1
-double sqrt(double current, double lowBound, 
-            double upBound, double number);
+double sqrt(double number);
 
 } // end namespace util
 } // end namespace wenjing
