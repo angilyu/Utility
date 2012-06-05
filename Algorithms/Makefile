@@ -10,8 +10,8 @@ Algorithm.a: $(ALGORITHM_OBJECTS)
 
 FindRemovedNumber.e: FindRemovedNumber.cc
 	g++ -o FindRemovedNumber.e FindRemovedNumber.cc
-MyAtoi.e: MyAtoi.cc
-	g++ -o MyAtoi.e MyAtoi.cc
+ToInt.e: ToInt.cc
+	g++ -o ToInt.e ToInt.cc
 SplitWords.e: SplitWords.cc
 	g++ -o SplitWords.e SplitWords.cc
 BinarySearch.e: BinarySearch.cc
@@ -32,8 +32,8 @@ PartitionZero.e: PartitionZero.cc
 	g++ -o PartitionZero.e PartitionZero.cc
 InplaceMerge.e: InplaceMerge.cc
 	g++ -o InplaceMerge.e InplaceMerge.cc
-Deduplicate.e: Deduplicate.cc
-	g++ -o Deduplicate.e Deduplicate.cc
+HasDuplicate.e: HasDuplicate.cc
+	g++ -o HasDuplicate.e HasDuplicate.cc
 Compact.e: Compact.cc
 	g++ -o Compact.e Compact.cc
 MergeTwoArray.e: MergeTwoSortedArray.cc
