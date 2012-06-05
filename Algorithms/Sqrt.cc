@@ -1,14 +1,27 @@
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 namespace wenjing{
 namespace util{
 
 static const double MARGIN = 0.001;
+static double sqrt0(double number, double lowBound, double upBound, double guess) {
+    cout<<guess<<endl;
+    double delta = guess * guess - number;
+    if (abs(delta) <= MARGIN) {
+        return guess; 
+    }
+    return delta > 0 ? lowBound == -1 ? sqrt0(number, lowBound, guess, guess / 2) :
+                                        sqrt0(number, lowBound, guess, (lowBound + guess) / 2)
+                    :
+                    upBound == -1 ? sqrt0(number, guess, upBound, guess * 2) :
+                                    sqrt0(number, guess, upBound, (guess + upBound) / 2);
+}
+double sqrt0(double number) {
+    return sqrt0(number, -1, -1, 2);
+}
 static double sqrt(double number, double lowBound, double upBound) {
-    if (abs(lowBound - upBound) < MARGIN)
-        return lowBound;
-
     double guess = (lowBound + upBound) / 2;
     double delta = guess * guess - number;
 
@@ -26,14 +39,13 @@ double sqrt(double number) {
            1 / sqrt(1 / number);
 }
 
-} // end wenjing namespace
 } // end util namespace
+} // end wenjing namespace
 
 
 #include <iostream>
 using namespace std;
 
 int main(int argc, char** argv) {
-    cout<<wenjing::util::sqrt(0.25)<<endl;
+    cout<<wenjing::util::sqrt0(0.99)<<endl;
 }
-

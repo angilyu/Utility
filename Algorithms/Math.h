@@ -11,7 +11,7 @@ namespace util{
 /// @param number should be greater or equal to zero
 ///
 /// @return returns the best guess of square root
-//          if the input is invalid, return -1
+///          if the input is invalid, return -1
 double sqrt(double current, double lowBound, 
             double upBound, double number);
 
