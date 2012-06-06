@@ -1,9 +1,7 @@
-// #include <cmath>
-// using namespace std;
-
 #include <gtest/gtest.h>
 #include <../Math.h>
 
+// -- A utility function to test the sameness of two floating number.
 void AlmostTheSame(double f1, double f2) {
     ASSERT_NEAR(f1, f2, 0.001);
 }

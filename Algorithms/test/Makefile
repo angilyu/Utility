@@ -10,7 +10,7 @@ run:
 all: $(TESTS)
 
 %.e: %.cc
-	g++ -o $@ $< ../Sqrt.o -I. -lgtest 
+	g++ -o $@ $< ../Algorithm.a -I. -lgtest 
 
 clean:
 	rm -rf *.e
