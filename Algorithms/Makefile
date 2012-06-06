@@ -1,6 +1,6 @@
 .PHONY: run clean all
 
-ALGORITHM_OBJECTS=Sqrt.o
+ALGORITHM_OBJECTS=Sqrt.o Conv.o
 
 Algorithm.a: $(ALGORITHM_OBJECTS)
 	ar -cvq Algorithm.a $<

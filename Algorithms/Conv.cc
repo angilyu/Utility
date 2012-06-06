@@ -3,6 +3,9 @@
 #include <cassert>
 using namespace std;
 
+namespace wenjing{
+namespace util{
+
 int toInt(const char* str) {
     // process sign
     bool negative = *str == '-';
@@ -18,8 +21,5 @@ int toInt(const char* str) {
     return negative ? -sum : sum;
 }
 
-int main(int argc, char** argv) {
-    cout<<toInt("321")<<endl;
-    cout<<toInt("-123")<<endl;
-    cout<<toInt("+12")<<endl;
-}
+} // end namespace util
+} // end namespace wenjing
