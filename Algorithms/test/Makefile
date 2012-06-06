@@ -9,7 +9,7 @@ run:
 
 all: $(TESTS)
 
-%.e: %.cc
+%.e: %.cc ../Algorithm.a
 	# g++ -o $@ $< ../Algorithm.a -I. -lgtest 
 	g++ -o $@ $< ../Conv.o ../Sqrt.o -I. -lgtest 
 
