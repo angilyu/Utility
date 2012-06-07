@@ -1,39 +1,26 @@
-//3. String compaction: how can we remove the extra white spaces(more than one consecutive white spaces), in place?
-#include <iostream>
-using namespace std;
-void compactString(char* string) {
-    // TODO CHECK NULL
-    char* pRead = string;
-    char* pActual = string;
-    bool preBlank = false;
+namespace wenjing{
+namespace util{
 
-    // WARNING: NO pRead != '\0'
-    // NO: pRead == NULL
-    while (*pRead != '\0') {
-        if (*pRead == ' ' && preBlank == true) {
-            // TODO ADD THE FOLLOWING
-            // Do nothing
-        } else {
-            *pActual = *pRead;
-            pActual++;
-        }
+int compactString(char* string, char ch) {
+    char* pos = string;
+    // TODO: THE NAME SUCKS
+    bool lastIsCh = false;
+    int count = 0;
 
-        preBlank = *pRead == ' ';
-        /*
-        if (*pRead == ' ') {
-            preBlank = true;
+    while (*pos != '\0') {
+        if (*pos == ch && lastIsCh == true) {
+            ++count;
         } else {
-            preBlank = false;
+            if (count > 0)
+                *(pos - count) = *pos;
         }
-        */
-        pRead++;
+        lastIsCh = *pos == ch;
+        pos++;
     }
-    *pActual = '\0';
+
+    *(pos - count) = '\0';
+    return count;
 }
-int main(int argc, char** argv) {
-    // char string[] = "   hello  world   !";
-    char string[] = "         ";
-    cout<<"Start:"<<string<<":End"<<endl;
-    compactString(string);  
-    cout<<"Start:"<<string<<":End"<<endl;
-}
+
+} // end namespace util
+} // end namespace wenjing
