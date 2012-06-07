@@ -6,7 +6,6 @@ namespace util{
 
 static const double MARGIN = 0.001;
 static double sqrt0(double number, double lowBound, double upBound, double guess) {
-    cout<<guess<<endl;
     double delta = guess * guess - number;
     if (abs(delta) <= MARGIN) {
         return guess; 
