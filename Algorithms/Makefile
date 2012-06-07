@@ -1,12 +1,15 @@
-.PHONY: run clean all
+.PHONY: run clean all test
 
-ALGORITHM_OBJECTS=Sqrt.o Conv.o
+ALGORITHM_OBJECTS=Sqrt.o Conv.o Compact.o
 
 Algorithm.a: $(ALGORITHM_OBJECTS)
-	ar -cvq Algorithm.a $<
+	ar -cq Algorithm.a $^
 
 %.o: %.cc
 	g++ -c -o $@ $<
+
+test:
+	(cd test; make)
 
 FindRemovedNumber.e: FindRemovedNumber.cc
 	g++ -o FindRemovedNumber.e FindRemovedNumber.cc

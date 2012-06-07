@@ -1,6 +1,6 @@
 .PHONY: all clean run
 
-TESTS=MathTest.e ConvTest.e
+TESTS=MathTest.e ConvTest.e StringTest.e
 
 run:
 	(cd ..; make)
@@ -10,8 +10,7 @@ run:
 all: $(TESTS)
 
 %.e: %.cc ../Algorithm.a
-	# g++ -o $@ $< ../Algorithm.a -I. -lgtest 
-	g++ -o $@ $< ../Conv.o ../Sqrt.o -I. -lgtest 
+	g++ -o $@ $^ -I. -lgtest 
 
 clean:
 	rm -rf *.e
