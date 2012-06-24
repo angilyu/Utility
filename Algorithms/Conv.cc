@@ -1,7 +1,5 @@
-#include <iostream>
 #include <cctype>
 #include <cassert>
-using namespace std;
 
 namespace wenjing{
 namespace util{
