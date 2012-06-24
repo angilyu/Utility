@@ -1,11 +1,13 @@
 .PHONY: run clean all test
 
-ALGORITHM_OBJECTS=Sqrt.o Conv.o Compact.o
+ALGORITHM_OBJECTS=Sqrt.o Conv.o Compact.o FindSubstring.o
 
 Algorithm.a: $(ALGORITHM_OBJECTS)
+	rm -f Algorithm.a
 	ar -cq Algorithm.a $^
 
 %.o: %.cc
+	echo "touched"
 	g++ -c -o $@ $<
 
 test:
